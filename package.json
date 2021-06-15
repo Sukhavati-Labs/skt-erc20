@@ -1,0 +1,57 @@
+{
+  "name": "skt-erc20",
+  "version": "1.0.0",
+  "description": "Skt ERC20 Contract",
+  "homepage": "https://github.com/Sukhavati-Labs/skt-erc20#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sukhavati-Labs/skt-erc20.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Sukhavati-Labs/skt-erc20/issues"
+  },
+  "keywords": [
+    "SKT",
+    "ERC20",
+    "Ethereum",
+    "Token"
+  ],
+  "author": "",
+  "license": "UNLICENSED",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "compile": "truffle compile",
+    "migrate": "truffle migrate",
+    "console": "truffle console",
+    "release": "truffle migrate --network live",
+    "test": "truffle test",
+    "clean": "rm -rf build/contracts",
+    "abi": "yarn clean && yarn compile && ./gen-abi.sh Skt Claim",
+    "format": "prettier --write contracts/**/*.sol",
+    "flatten": "truffle-flattener contracts/Skt.sol > Skt_flat.sol",
+    "coverage": "truffle run coverage --file='./test/*.js'",
+    "testrpc": "ganache-cli -m \"$(cat .env | grep MNEMONIC= | awk -F '=' '{print $2}')\" -d"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "3.4.0-solc-0.7",
+    "@truffle/hdwallet-provider": "^1.2.2",
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.0",
+    "chai-as-promised": "^7.1.1",
+    "chai-bignumber": "^3.0.0",
+    "ethereumjs-abi": "^0.6.8",
+    "ethereumjs-util": "^7.0.8",
+    "ganache-cli": "^6.12.2",
+    "prettier": "^2.2.1",
+    "prettier-plugin-solidity": "^1.0.0-beta.5",
+    "solidity-coverage": "^0.7.15",
+    "truffle": "^5.1.67",
+    "truffle-assertions": "^0.9.2",
+    "truffle-flattener": "1.5.0"
+  }
+}

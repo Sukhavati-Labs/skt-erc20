@@ -1,0 +1,10 @@
+.env
+build
+coverage.json
+coverage/
+node_modules
+yarn-error.log
+Skt_flat.sol
+Claim_flat.sol
+
+.idea
